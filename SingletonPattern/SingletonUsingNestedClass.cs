@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace SingletonPattern;
 
 // Singleton, nested class approach
-internal class SingletonTricky
+internal class SingletonUsingNestedClass
 {
-    public static SingletonTricky Instance
+    public static SingletonUsingNestedClass Instance
     {
         get
         {
@@ -19,7 +19,7 @@ internal class SingletonTricky
 
     private class Nested
     {
-        internal static readonly SingletonTricky _instance;
+        internal static readonly SingletonUsingNestedClass _instance;
 
         // Creating static constructor, so that the singleton instance is initialized once we called any static member of the class
         static Nested ()
