@@ -11,7 +11,7 @@ internal class Composite : Component
     public Composite(string name) : base(name) { }
     public List<Component> Children { get; set; } = new();
 
-    public override void Add(Component c)
+    public void Add(Component c)
     {
         Children.Add(c);
     }
@@ -25,7 +25,7 @@ internal class Composite : Component
         }
     }
 
-    public override void Remove(Component c)
+    public void Remove(Component c)
     {
         Children.Remove(c);
     }

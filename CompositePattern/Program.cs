@@ -7,6 +7,11 @@ internal class Program
     // This is the client
     static void Main(string[] args)
     {
+        
+    }
+
+    private static void StructureExample()
+    {
         Composite root = new("Root");
         Composite comp1 = new Composite("comp1");
         Composite comp2 = new Composite("comp2");
