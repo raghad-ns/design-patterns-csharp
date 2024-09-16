@@ -1,4 +1,5 @@
-﻿using CompositePattern.Structure;
+﻿using CompositePattern.OrganizationHierarchy;
+using CompositePattern.Structure;
 
 namespace CompositePattern;
 
@@ -6,6 +7,25 @@ internal class Program
 {
     // This is the client
     static void Main(string[] args)
+    {
+        var root = new Branch("Root branch", "USA");
+        var sales = new Department("Sales");
+        var hr = new Department("HR");
+        var socialMedia = new Department("Social media");
+        root.Add(sales);
+        root.Add(hr);
+        sales.Add(socialMedia);
+        socialMedia.Add(new Employee("John", 2000));
+        hr.Add(new Employee("Dan", 1800));
+        hr.Add(new Employee("Sara", 2200));
+        socialMedia.Add(new Employee("Tim", 2500));
+        Console.WriteLine($"Social media total salaries: {socialMedia.GetTotalSalaries()}");
+        Console.WriteLine($"Sales total salaries: {sales.GetTotalSalaries()}");
+        Console.WriteLine($"HR total salaries: {hr.GetTotalSalaries()}");
+        Console.WriteLine($"Total salaries: {root.GetTotalSalaries()}");
+    }
+
+    private static void BuilderExample()
     {
         Builder builder = new("Root");
         builder.AddComposite("comp1");
