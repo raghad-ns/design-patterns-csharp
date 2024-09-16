@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CompositePattern.Structure;
 
-internal abstract class Component
+public abstract class Component
 {
     public readonly string Name;
     public Component(string name)

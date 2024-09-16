@@ -7,7 +7,15 @@ internal class Program
     // This is the client
     static void Main(string[] args)
     {
-        
+        Builder builder = new("Root");
+        builder.AddComposite("comp1");
+        builder.AddLeaf("leaf1");
+        builder.AddLeaf("leaf2");
+        builder.SetCurrentComposite("Root");
+        builder.AddLeaf("rootLeaf");
+        builder.AddComposite("comp2");
+        builder.AddLeaf("Leaf21");
+        builder.Root.PrimaryOperation(1);
     }
 
     private static void StructureExample()

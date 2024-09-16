@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CompositePattern.Structure;
 
-internal class Composite : Component
+public class Composite : Component
 {
     public Composite(string name) : base(name) { }
     public List<Component> Children { get; set; } = new();

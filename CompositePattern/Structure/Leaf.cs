@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CompositePattern.Structure;
 
-internal class Leaf : Component
+public class Leaf : Component
 {
     public Leaf(string name) : base(name) { }
 
